@@ -1,0 +1,10 @@
+@mixin flexProperties{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+@mixin commonDecoration($parameter2,$parameter1){
+    color: $parameter1;
+    letter-spacing: $parameter2;
+}

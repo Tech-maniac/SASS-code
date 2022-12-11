@@ -1,0 +1,71 @@
+@import "var";
+
+@import "../node_modules/bootstrap/scss/functions";
+
+//your own map
+$my-colors:(
+    "golden" : yellow,
+    "silver" : rgb(92, 207, 15)
+);
+
+@import "../node_modules/bootstrap/scss/variables";
+
+//merge maps :
+$theme-colors:map-merge($my-colors,$theme-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    //1 rem = 10px
+    font-size: 10px;
+}
+
+//1 : Operators : 
+//2 : Variables :
+//3 : Nesting : 
+//4 : mixin : 
+//5 : parameters :
+//6 : partial (files) : (always use underscore (_) before writing partial files.
+
+
+$bg-color:rgb(109, 80, 163);
+
+@import "mixin";
+
+.main-header{
+    @include flexProperties;
+    width: 100vw;
+    height: 100vh;
+    background-color: $bg-color;
+    font-size: 5rem + 5rem;
+}
+
+h1{
+    @include commonDecoration(4rem,yellow);
+    &:hover{
+        color: black;
+    }
+
+    &::after{
+        content: "to SASS";
+    }
+}
+
+p{
+    @include commonDecoration(2rem,red);
+    &:hover{
+        color: black;
+    }
+
+    &::after{
+        content: "to SASS";
+    }
+
+}
